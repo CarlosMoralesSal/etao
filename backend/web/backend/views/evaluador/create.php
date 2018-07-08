@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model common\models\Evaluador */
 
 $this->title = Yii::t('app', 'Create Evaluador');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Evaluadors'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Evaluador'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="evaluador-create">

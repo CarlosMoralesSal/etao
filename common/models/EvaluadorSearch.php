@@ -8,12 +8,12 @@ use yii\data\ActiveDataProvider;
 use common\models\Evaluador;
 
 /**
- * EvaluadorSearch represents the model behind the search form of `common\models\Evaluador`.
+ * common\models\EvaluadorSearch represents the model behind the search form about `common\models\Evaluador`.
  */
-class EvaluadorSearch extends Evaluador
+ class EvaluadorSearch extends Evaluador
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function rules()
     {
@@ -24,7 +24,7 @@ class EvaluadorSearch extends Evaluador
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function scenarios()
     {
@@ -43,8 +43,6 @@ class EvaluadorSearch extends Evaluador
     {
         $query = Evaluador::find();
 
-        // add conditions that should always apply here
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -57,7 +55,6 @@ class EvaluadorSearch extends Evaluador
             return $dataProvider;
         }
 
-        // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
             'user_id' => $this->user_id,

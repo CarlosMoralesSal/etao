@@ -11,8 +11,8 @@ use kartik\grid\GridView;
 $this->title = Yii::t('app', 'Evaluador');
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
-	$('.search-form').toggle(1000);
-	return false;
+    $('.search-form').toggle(1000);
+    return false;
 });";
 $this->registerJs($search);
 ?>
@@ -46,7 +46,7 @@ $this->registerJs($search);
                     return $model->user->id;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\common\models\User::find()->asArray()->all(), 'id', 'id'),
+                'filter' => \yii\helpers\ArrayHelper::map(\common\models\User::find()->asArray()->all(), 'id', 'username'),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],

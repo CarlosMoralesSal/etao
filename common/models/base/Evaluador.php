@@ -20,6 +20,8 @@ use mootensai\behaviors\UUIDBehavior;
  *
  * @property \common\models\Evaluado[] $evaluados
  * @property \common\models\User $user
+ * @property \common\models\Imagenes[] $imagenes
+ * @property \common\models\TestEvaluados[] $testEvaluados
  */
 class Evaluador extends \yii\db\ActiveRecord
 {
@@ -34,7 +36,9 @@ class Evaluador extends \yii\db\ActiveRecord
     {
         return [
             'evaluados',
-            'user'
+            'user',
+            'imagenes',
+            'testEvaluados'
         ];
     }
 
@@ -103,6 +107,22 @@ class Evaluador extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(\common\models\User::className(), ['id' => 'user_id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImagenes()
+    {
+        return $this->hasMany(\common\models\Imagenes::className(), ['evaluador_id' => 'id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTestEvaluados()
+    {
+        return $this->hasMany(\common\models\TestEvaluados::className(), ['idevaluador' => 'id']);
     }
     
     /**
